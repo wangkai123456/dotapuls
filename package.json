@@ -52,6 +52,8 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "electron-vue-windows": "^1.0.41",
+    "element-ui": "^2.14.1",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",
