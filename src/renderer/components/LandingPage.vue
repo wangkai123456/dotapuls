@@ -1,23 +1,118 @@
 <template>
-  <div id="wrapper">
-    <main>
-      <div class="left-side">
-        <span class="title">
-          哈喽 召唤师
-        </span>
+  <div class="box">
+    <div class="table-item">
+      <div>总体数据</div>
+      <el-table
+        border
+        :data="tableData"
+        style="width: 100%;height:100%;margin-top: 10px;"
+      >
+        <el-table-column prop="name" label="玩家"> </el-table-column>
+        <el-table-column prop="skill" label="段位"> </el-table-column>
+        <el-table-column prop="address" label="总比赛">
+          <template>
+            <div class="min-hgi">5000 (54%)</div>
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+    <div class="table-item">
+      <div>当月数据</div>
+      <el-table border :data="tableData" style="width: 100%;height:100%;margin-top: 10px;">
+        <el-table-column prop="address" label="总比赛"> </el-table-column>
+        <el-table-column prop="date" label="最多使用英雄">
+          <template>
+            <img
+              v-for="item in 5"
+              :key="item"
+              class="ava"
+              :src="require('./../assets/3321605243470_.pic.jpg')"
+              alt=""
+            />
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+    <div class="table-item no-bor">
+      <div>值得注意</div>
+      <img
+        class="hero"
+        :src="require('./../assets/3321605243470_.pic.jpg')"
+        alt=""
+      />
+      <div class="often-hero">
+        <img
+          v-for="item in 4"
+          :key="item"
+          class="ava-2"
+          :src="require('./../assets/3321605243470_.pic.jpg')"
+          alt=""
+        />
       </div>
-
-      <el-button type="primary" class="start" round>启动</el-button>
-    </main>
+      <el-carousel class="advertisement">
+        <el-carousel-item v-for="item in 4" :key="item">
+          <h3 class="small">美女荷官，在线发票</h3>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
   </div>
 </template>
 
 <script>
-import SystemInformation from "./LandingPage/SystemInformation";
-
 export default {
+  data() {
+    return {
+      loading: false,
+      tableData: [
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+        {
+          name: "噜噜噜",
+          skill: "最强王者",
+          address: "5000 (54%)",
+        },
+      ],
+    };
+  },
   name: "landing-page",
-  components: { SystemInformation },
   methods: {
     open(link) {
       this.$electron.shell.openExternal(link);
@@ -27,97 +122,62 @@ export default {
 </script>
 
 <style scoped>
-.start {
-  width: 300px;
-  height: 300px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
+.no-bor {
+  border: none;
 }
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.table-item {
+  width: 33%;
+  text-align: center;
 }
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-#wrapper {
-  background: radial-gradient(
-    ellipse at top left,
-    rgba(255, 255, 255, 1) 40%,
-    rgba(229, 229, 229, 0.9) 100%
-  );
-  height: 100vh;
-  padding: 60px 80px;
-  width: 100vw;
-}
-
-#logo {
-  height: auto;
-  margin-bottom: 20px;
-  width: 420px;
-}
-
-main {
+.box {
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
 }
-
-main > div {
-  flex-basis: 50%;
+.ava {
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  margin-right: 5px;
 }
-
-.left-side {
+.hero {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  margin-top: 10px;
+}
+.ava-2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+.often-hero {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.min-hgi {
+  height: 35px;
+}
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
 }
 
-.welcome {
-  color: #555;
-  font-size: 23px;
-  margin-bottom: 10px;
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
 }
 
-.title {
-  color: #2c3e50;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 6px;
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
-
-.title.alt {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.doc p {
-  color: black;
-  margin-bottom: 10px;
-}
-
-.doc button {
-  font-size: 0.8em;
-  cursor: pointer;
-  outline: none;
-  padding: 0.75em 2em;
-  border-radius: 2em;
-  display: inline-block;
-  color: #fff;
-  background-color: #4fc08d;
-  transition: all 0.15s ease;
-  box-sizing: border-box;
-  border: 1px solid #4fc08d;
-}
-
-.doc button.alt {
-  color: #42b983;
-  background-color: transparent;
+.advertisement {
+  width: 100%;
+  margin-top: 20px;
+  min-height: 100%;
 }
 </style>

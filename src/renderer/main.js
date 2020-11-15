@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
+document.title = 'DOTA助手';
 /* eslint-disable no-new */
 new Vue({
   components: { App },

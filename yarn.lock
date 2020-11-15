@@ -24,6 +24,11 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@tweenjs/tween.js@^17.2.0":
+  version "17.6.0"
+  resolved "https://registry.npm.taobao.org/@tweenjs/tween.js/download/@tweenjs/tween.js-17.6.0.tgz#61bc86c372bcc5a9f744e661dd6ae16f5ee7d0ef"
+  integrity sha1-YbyGw3K8xan3ROZh3Wrhb17n0O8=
+
 "@types/debug@^4.1.4":
   version "4.1.5"
   resolved "https://registry.npm.taobao.org/@types/debug/download/@types/debug-4.1.5.tgz#b14efa8852b7768d898906613c23f688713e02cd"
@@ -3161,6 +3166,13 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
   version "1.3.595"
   resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.595.tgz#e8a9e7c6919963419f892ea981d7b3438ccb834d"
   integrity sha1-6KnnxpGZY0GfiS6pgdezQ4zLg00=
+
+electron-vue-windows@^1.0.41:
+  version "1.0.41"
+  resolved "https://registry.npm.taobao.org/electron-vue-windows/download/electron-vue-windows-1.0.41.tgz#80f793881513c500ffd35b820fb1f41a350679fa"
+  integrity sha1-gPeTiBUTxQD/01uCD7H0GjUGefo=
+  dependencies:
+    "@tweenjs/tween.js" "^17.2.0"
 
 electron@^2.0.4:
   version "2.0.18"
